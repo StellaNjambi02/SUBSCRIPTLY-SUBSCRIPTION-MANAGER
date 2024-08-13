@@ -4,12 +4,15 @@ import Navbar from './components/Navbar';
 import AuthPage from './components/AuthPage';
 import HomePage from './pages/HomePage';
 import './App.css';
+import { useAuth } from './context/AuthContext';
 
 function App() {
+  const {isAuthenticated} = useAuth();
+
   return (
     <div className="App">
+      {isAuthenticated && <Navbar />}
       <Navbar />
-      <h1>Welcome to Subscriptly</h1>
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path="/home" element={<HomePage />} />
