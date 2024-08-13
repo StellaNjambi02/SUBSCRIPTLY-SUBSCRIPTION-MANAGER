@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Table from "../components/Table";
 import "./HomePage.css"
 import SubscriptionsForm from "../components/SubscriptionsForm"
-
+import Footer from '../components/Footer';
 const HomePage = ({user}) => {
   const [subscriptions, setSubscriptions] = useState([])
 
@@ -26,7 +26,10 @@ const HomePage = ({user}) => {
     }
     fetchSubscriptions();
   }, [user]);
-
+  const handleDelete=(id)=>{
+    alert("You are about to cancel your subscription!")
+    setSubscriptions(prev=>prev.filter((subscription)=>subscription.id!==id))
+  }
   
   const handleAddSubscription = (newSubscription) => {
     setSubscriptions([...subscriptions, newSubscription])
@@ -39,7 +42,8 @@ const HomePage = ({user}) => {
     <div>
       <h2 id="message">Welcome to the Homepage, {user}!</h2>
       <SubscriptionsForm user={user} onAddSubscription={handleAddSubscription}/>
-      <Table subscriptions={subscriptions}/>
+      <Table subscriptions={subscriptions} handleDelete={handleDelete}/>
+       <Footer />
     </div>
   );
 };
