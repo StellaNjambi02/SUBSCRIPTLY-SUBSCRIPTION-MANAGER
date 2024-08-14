@@ -85,6 +85,35 @@
           "date_of_payment": "2024-08-01"
         }
       ]
+    },
+    {
+      "id": "f726",
+      "name": "billy kips",
+      "email": "koechkbilly@gmail.com",
+      "password": "6483",
+      "subscriptions": [
+        {
+          "name": "gnod",
+          "category": "gaming",
+          "cost": "225",
+          "billing_cycle": "monthly",
+          "date_of_payment": "2024-08-20"
+        }
+      ]
+    },
+    {
+      "id": "419b",
+      "name": "koech",
+      "email": "billykips@gmail.com",
+      "password": "6483",
+      "subscriptions": []
+    },
+    {
+      "id": "12e1",
+      "name": "koech",
+      "email": "mang@gmail.com",
+      "password": "6483",
+      "subscriptions": []
     }
   ]
 }
