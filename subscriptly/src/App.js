@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import AuthPage from './components/AuthPage';
 import HomePage from './pages/HomePage';
 import './App.css';
+import SearchBar from './components/SearchBar';
 
 function App() {
   const [user, setUser] = useState(null)
