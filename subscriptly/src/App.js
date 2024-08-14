@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import AuthPage from './components/AuthPage';
@@ -14,9 +14,9 @@ function App() {
       {isAuthenticated && <Navbar />}
       <Navbar />
       <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path="/home" element={<HomePage />} />
-        <Route path="/login" element={<AuthPage />} />
+        <Route path='/' element={<HomePage user={user}/>} />
+        <Route path="/home" element={<HomePage user={user}/>} />
+        <Route path="/login" element={<AuthPage setUser={setUser}/>} />
       </Routes>
     </div>
   );

@@ -49,3 +49,8 @@ nav ul li {
   margin-right: 8px; 
 }
 
+
+.user-name {
+  font-weight: bold;
+  color: white;
+}
