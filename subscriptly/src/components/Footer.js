@@ -5,6 +5,7 @@ function Footer() {
     function handleSubmit(e){
         e.preventDefault();
         e.target.reset();
+        
     }
   return (
     
