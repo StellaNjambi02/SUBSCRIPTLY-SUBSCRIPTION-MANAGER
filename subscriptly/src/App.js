@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import AuthPage from './components/AuthPage';
 import HomePage from './pages/HomePage';
@@ -27,11 +27,12 @@ function App() {
       <Navbar user={user} onLogout={handleLogout} />
       {/* {!user && <h1>Subscriptly!</h1>} */}
       <Routes>
-        <Route path='landing' element={<LandingPage user={user} />} />
-        <Route path="/" element={<HomePage user={user} />} />
+        <Route path="/" element={<Navigate to="/landing" />} />
+        <Route path="/landing" element={<LandingPage user={user} />} />
         <Route path="/home" element={<HomePage user={user} />} />
         <Route path="/login" element={<AuthPage setUser={setUser} />} />
       </Routes>
+
     </div>
   );
 }

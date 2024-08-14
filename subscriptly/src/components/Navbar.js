@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import '../App.css';
 import './Navbar.css';
 import { NavbarData } from './NavbarData';
@@ -8,19 +9,25 @@ import LogoutIcon from '@mui/icons-material/Logout';
 
 const Navbar = ({ user, onLogout }) => {
     const [isExpanded, setIsExpanded] = useState(true);
+    const navigate = useNavigate(); // Initialize useNavigate
 
     useEffect(() => {
         let timer;
         if (isExpanded) {
             timer = setTimeout(() => {
                 setIsExpanded(false);
-            }, 4000); // 5 seconds
+            }, 4000); // 4 seconds
         }
         return () => clearTimeout(timer); // Clear the timer if the component unmounts or if `isExpanded` changes
     }, [isExpanded]);
 
     const toggleNavbar = () => {
         setIsExpanded(!isExpanded);
+    };
+
+    const handleLogout = () => {
+        onLogout(); // Clear the user state or perform any necessary logout logic
+        navigate('/landing'); // Redirect to the LandingPage
     };
 
     const menuItems = [
@@ -36,7 +43,7 @@ const Navbar = ({ user, onLogout }) => {
             id: 'logout',
             icon: <LogoutIcon />,
             title: 'Logout',
-            onClick: onLogout,
+            onClick: handleLogout, // Updated onClick to handleLogout
         },
     ].filter(Boolean); // Remove null items (like logout when not logged in)
 
@@ -69,3 +76,4 @@ const Navbar = ({ user, onLogout }) => {
 };
 
 export default Navbar;
+
