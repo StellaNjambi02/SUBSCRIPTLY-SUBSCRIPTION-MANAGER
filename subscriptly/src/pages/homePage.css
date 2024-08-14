@@ -1,0 +1,20 @@
+.homepage-heading {
+    margin: 0;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+.homepage-headingP {
+    margin: 1rem 0;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: large;
+}
+
+img {
+    width: 600px;
+    height: auto;
+}
+.homepage-container{
+    font-size: larger;
+}
